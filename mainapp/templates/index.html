@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+        {% block body %}
+        <div class="container">
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="exampleFormControlInput1" class="form-label">Bắt đầu tạo tên file âm</label>
+            <div class="mb-3">
+                <textarea class="form-control" id="text_area" rows="12" name="tdl" ></textarea>
+            </div>
+
+            <div class="mb-3">
+                <textarea class="form-control" id="text_area" rows="12" name="text" required  placeholder="Write Something here..."></textarea>
+            </div>
+
+            <div class="col-auto">
+               <input type="submit" class="btn btn-success" value="Generate">
+            </div>
+        </form>
+    </div>
+{% endblock body %}
