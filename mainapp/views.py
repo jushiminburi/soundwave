@@ -6,6 +6,14 @@ import random
 import os
 import shutil
 
+from django.http import HttpResponse
+
+def image_view(request):
+    image_path = "/Users/vhmt.vn/Library/Mobile Documents/com~apple~CloudDocs/google/sound/tim.png"  # Thay đổi đường dẫn đến hình ảnh của bạn
+    
+    with open(image_path, 'rb') as f:
+        return HttpResponse(f.read(), content_type='image/jpeg')
+
 def index_page(request):
     client = texttospeech_v1beta1.TextToSpeechClient()
     if request.method == "POST":
